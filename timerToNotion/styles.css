@@ -4,7 +4,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
     font-family: Arial, sans-serif;
   }
   
@@ -29,12 +29,12 @@ body {
     outline: none;
     margin-bottom: 20px;
     background-color: transparent; /* Remove o fundo do campo */
-    color: #333333; /* Cor do texto */
+    color: #606c76; /* Cor do texto */
   }
   
   h1 {
     font-size: 6em;
-    color: #ff5a5f;
+    color: #333333;
     margin: 0;
   }
   
