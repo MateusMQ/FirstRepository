@@ -10,6 +10,7 @@ body {
   
   .timer {
     display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
     justify-content: center;
     align-items: center;
     width: 80vw;
@@ -18,6 +19,17 @@ body {
     border: none;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilo da descrição */
+  #description {
+    font-size: 2em;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    background-color: transparent; /* Remove o fundo do campo */
+    color: #333333; /* Cor do texto */
   }
   
   h1 {
