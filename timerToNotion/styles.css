@@ -4,37 +4,47 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f7f7f7;
+    background-color: #121212; /* Cor de fundo escura */
     font-family: Arial, sans-serif;
   }
   
   .timer {
     display: flex;
-    flex-direction: column; /* Organiza os itens verticalmente */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vw;
-    height: 80vh;
-    background: #ffffff;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 20px;
+    background: #1f1f1f; /* Fundo da caixa escura */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   }
   
   /* Estilo da descrição */
   #description {
-    font-size: 2em;
+    font-size: 1.5em;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    background-color: transparent;
+    color: #ffffff; /* Cor do texto branca */
+  }
+  
+  /* Estilo do campo de edição do tempo */
+  #timeInput {
+    font-size: 1.5em;
     text-align: center;
     border: none;
     outline: none;
     margin-bottom: 20px;
-    background-color: transparent; /* Remove o fundo do campo */
-    color: #606c76; /* Cor do texto */
+    background-color: transparent;
+    color: #3f3f3f; /* Cor do texto do tempo */
   }
   
   h1 {
-    font-size: 6em;
-    color: #333333;
+    font-size: 5em;
+    color: #3f3f3f; /* Cor do texto do contador */
     margin: 0;
   }
   
