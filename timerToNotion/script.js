@@ -1,14 +1,21 @@
 const countdownElement = document.getElementById("countdown");
-const timeInput = document.getElementById("timeInput");
-const startBtn = document.getElementById("startBtn");
+const startPauseBtn = document.getElementById("startPauseBtn");
 const resetBtn = document.getElementById("resetBtn");
 
 let timer;
+let isRunning = false;
 
-timeInput.addEventListener("input", () => {
-  const newTime = timeInput.value;
+countdownElement.addEventListener("blur", () => {
+  const newTime = countdownElement.textContent.trim();
   if (/^\d{2}:\d{2}:\d{2}$/.test(newTime)) {
-    countdownElement.textContent = newTime;
+    if (isRunning) {
+      clearInterval(timer);
+      startTimer(newTime);
+    } else {
+      countdownElement.textContent = newTime; // Atualiza o contador com o novo tempo
+    }
+  } else {
+    countdownElement.textContent = "00:00:00"; // Resetar se o formato estiver errado
   }
 });
 
@@ -17,7 +24,9 @@ function startTimer(duration) {
   const countdown = () => {
     if (seconds === 0 && minutes === 0 && hours === 0) {
       clearInterval(timer);
-      alert("Time's up!"); // Adicionando alerta
+      alert("Time's up!");
+      isRunning = false;
+      updateButton();
       return;
     }
     if (seconds === 0) {
@@ -37,13 +46,28 @@ function startTimer(duration) {
   timer = setInterval(countdown, 1000);
 }
 
-startBtn.addEventListener("click", () => {
-  clearInterval(timer);
-  startTimer(timeInput.value);
+function updateButton() {
+  if (isRunning) {
+    startPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  } else {
+    startPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+  }
+}
+
+startPauseBtn.addEventListener("click", () => {
+  if (isRunning) {
+    clearInterval(timer);
+    isRunning = false;
+  } else {
+    startTimer(countdownElement.textContent.trim());
+    isRunning = true;
+  }
+  updateButton();
 });
 
 resetBtn.addEventListener("click", () => {
   clearInterval(timer);
-  timeInput.value = "00:05:00"; // Resetar para o tempo inicial
-  countdownElement.textContent = "05:00"; // Resetar visualmente
+  isRunning = false;
+  countdownElement.textContent = "00:05:00"; // Resetar para o tempo inicial
+  updateButton(); // Atualiza o botão para "play"
 });

@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <title>Visual Timer</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="timer">
     <input type="text" id="description" placeholder="Enter description..." />
-    <input type="text" id="timeInput" placeholder="HH:MM:SS" value="00:05:00" />
-    <h1 id="countdown">05:00</h1>
-    <button id="startBtn">Start</button>
-    <button id="resetBtn">Reset</button>
+    <h1 id="countdown" contenteditable="true">00:05:00</h1> <!-- Tornando o contador editável -->
+    <div class="button-container"> <!-- Novo contêiner para os botões -->
+      <button id="startPauseBtn"><i class="fas fa-play"></i></button>
+      <button id="resetBtn"><i class="fas fa-undo"></i></button>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
