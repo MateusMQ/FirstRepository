@@ -1,19 +1,23 @@
 const countdownElement = document.getElementById("countdown");
 const timeInput = document.getElementById("timeInput");
+const startBtn = document.getElementById("startBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+let timer;
 
 timeInput.addEventListener("input", () => {
   const newTime = timeInput.value;
-  if (/^\d{2}:\d{2}:\d{2}$/.test(newTime)) { // Verifica se o formato é HH:MM:SS
+  if (/^\d{2}:\d{2}:\d{2}$/.test(newTime)) {
     countdownElement.textContent = newTime;
   }
 });
 
-let timer;
 function startTimer(duration) {
   let [hours, minutes, seconds] = duration.split(":").map(Number);
   const countdown = () => {
     if (seconds === 0 && minutes === 0 && hours === 0) {
       clearInterval(timer);
+      alert("Time's up!"); // Adicionando alerta
       return;
     }
     if (seconds === 0) {
@@ -33,7 +37,13 @@ function startTimer(duration) {
   timer = setInterval(countdown, 1000);
 }
 
-timeInput.addEventListener("change", () => {
+startBtn.addEventListener("click", () => {
   clearInterval(timer);
   startTimer(timeInput.value);
+});
+
+resetBtn.addEventListener("click", () => {
+  clearInterval(timer);
+  timeInput.value = "00:05:00"; // Resetar para o tempo inicial
+  countdownElement.textContent = "05:00"; // Resetar visualmente
 });
