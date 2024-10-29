@@ -19,11 +19,29 @@ window.onload = () => {
   }
 };
 
+// Função para mostrar a notificação
+function showNotification() {
+  if (Notification.permission === "granted") {
+    new Notification("Acabou!", {
+      body: "O temporizador chegou a zero.",
+    });
+  } else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        new Notification("Acabou!", {
+          body: "O temporizador chegou a zero.",
+        });
+      }
+    });
+  }
+}
+
 function startTimer(duration) {
   let [hours, minutes, seconds] = duration.split(":").map(Number);
   const countdown = () => {
     if (seconds === 0 && minutes === 0 && hours === 0) {
       clearInterval(timer);
+      showNotification(); // Chama a função de notificação
       return;
     }
     if (seconds === 0) {
