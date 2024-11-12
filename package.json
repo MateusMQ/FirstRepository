@@ -4,7 +4,9 @@
   "description": "First Repository",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
