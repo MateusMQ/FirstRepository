@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/MateusMQ/FirstRepository#readme",
   "dependencies": {
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "next": "^15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
