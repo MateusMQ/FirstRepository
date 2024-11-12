@@ -1,0 +1,88 @@
+/* Fundo da página */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212; /* Preto escuro */
+  color: #e53935; /* Vermelho para o texto */
+}
+
+/* Container principal */
+.container {
+  width: 300px;
+  padding: 20px;
+  background: linear-gradient(145deg, #1e1e1e, #2b2b2b);
+  border: 2px solid #3c3c3c;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5),
+              inset 0px 4px 15px rgba(0, 0, 0, 0.7); /* Sombra interna para efeito metálico */
+  text-align: center;
+}
+
+/* Efeito de neon no título */
+.title {
+  margin: 0;
+  font-size: 24px;
+  color: #e53935;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(229, 57, 53, 0.8), 0 0 20px rgba(229, 57, 53, 0.6);
+}
+
+/* Estilo do input e botão */
+.input-container {
+  display: flex;
+  margin-top: 15px;
+}
+
+#inputValue {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background-color: #2b2b2b;
+  color: #e5e5e5;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #e53935;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0px 4px 8px rgba(229, 57, 53, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff6f61;
+}
+
+/* Lista de valores */
+.value-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.value-list li {
+  padding: 8px;
+  background: linear-gradient(145deg, #2b2b2b, #1e1e1e);
+  margin-bottom: 8px;
+  color: #fff;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 18px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3),
+              inset 0px 2px 5px rgba(255, 215, 0, 0.1); /* Efeito de brilho metálico */
+  transition: transform 0.2s;
+}
+
+.value-list li:hover {
+  transform: scale(1.02);
+}
